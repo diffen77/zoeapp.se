@@ -17,6 +17,11 @@ cd <REPO_PATH> && git config user.email "john@lediff.se" && git config user.name
 
 Verifiera att Aider commitade (git log --oneline -1).
 Pusha: git push origin main
+**Kör retro** (FÖRE att du flyttar till Done):
+```
+bash /Users/diffen/.openclaw/workspace/scripts/agent-retro.sh john "<vad gick bra>" "<vad gick dåligt>" "<vad lärde du dig>"
+```
+Exempel: `bash /Users/diffen/.openclaw/workspace/scripts/agent-retro.sh john "Aider fixade filen rätt" "Glömde git log först" "Alltid verifiera commit innan push"`
 Flytta kort till "## Done".
 Ta nästa kort.
 
