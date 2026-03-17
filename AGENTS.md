@@ -83,7 +83,7 @@ curl -s "http://localhost:8100/memory/search?q=<uppgift>&agent_id=lundin&limit=5
 ```bash
 curl -s -X POST "http://localhost:8100/memory" \
   -H "Content-Type: application/json" \
-  -d "{\"content\": \"<vad du levererade, beslut, findings>\", \"agent_id\": \"lundin\", \"tags\": [\"leverans\"]}"
+  -d "{\"agent_id\": \"lundin\", \"content\": \"<vad du levererade, beslut, findings>\", \"tags\": [\"leverans\"]}"
 ```
 
 ## NÄR SYSTEM ÄR NERE — degraderad drift
