@@ -2,10 +2,51 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Zoe — Understand Your Food',
-  description: 'AI-powered ingredient scanning reveals what your body truly needs. Make smarter food choices with Zoe.',
+  title: 'Zoe — Understand Your Food | AI Nutrition Tracking',
+  description: 'AI-powered ingredient scanning reveals what your body truly needs. Track nutrition with instant AI analysis. Download Zoe for iOS, Android, and Web.',
+  applicationName: 'Zoe',
+  keywords: ['nutrition tracking', 'food scanner', 'AI nutrition', 'calorie tracker', 'macro tracking', 'health app'],
+  authors: [{ name: 'Zoe Team' }],
+  creator: 'Zoe',
+  publisher: 'Zoe',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://zoeapp.se',
+    siteName: 'Zoe',
+    title: 'Zoe — Understand Your Food | AI Nutrition Tracking',
+    description: 'AI-powered ingredient scanning reveals what your body truly needs. Make smarter food choices with Zoe.',
+    images: [
+      {
+        url: 'https://zoeapp.se/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Zoe — Understand Your Food',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zoe — Understand Your Food',
+    description: 'AI-powered ingredient scanning reveals what your body truly needs.',
+    images: ['https://zoeapp.se/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     icon: '🍎',
+  },
+  verification: {
+    google: 'verification-code-placeholder',
   },
 }
 
