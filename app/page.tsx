@@ -1,0 +1,236 @@
+'use client'
+
+import { useState } from 'react'
+import './page.css'
+
+export default function Home() {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index)
+  }
+
+  const faqItems = [
+    {
+      question: 'How accurate is the food tracking?',
+      answer: 'Zoe uses advanced AI to analyze food images with 95%+ accuracy. Our system recognizes portion sizes, ingredients, and preparation methods.'
+    },
+    {
+      question: 'Is my data private?',
+      answer: 'Yes. All data is encrypted end-to-end. We never sell your information. Your food scans are only used to improve your personal insights.'
+    },
+    {
+      question: 'How long until I see results?',
+      answer: 'Most users see meaningful insights within 2-3 weeks of consistent tracking. The more data you provide, the more accurate your personalized recommendations become.'
+    },
+    {
+      question: 'Can I use Zoe offline?',
+      answer: 'Yes! Zoe works offline. Your scans are cached locally and synced when you have internet connection again.'
+    }
+  ]
+
+  const metrics = [
+    'Carbohydrates', 'Protein', 'Fat', 'Fiber',
+    'Sodium', 'Sugar', 'Vitamins', 'Minerals',
+    'Antioxidants', 'Probiotics', 'NOVA Score', 'Satiety'
+  ]
+
+  const testimonials = [
+    {
+      quote: 'Zoe completely changed how I think about food. I finally understand what my body actually needs.',
+      author: 'Sarah M.',
+      role: 'Nutrition Coach'
+    },
+    {
+      quote: 'The AI is scary-accurate. It knows my food better than I do. Highly recommended!',
+      author: 'Marcus T.',
+      role: 'Fitness Enthusiast'
+    },
+    {
+      quote: 'Simple, beautiful, and genuinely helpful. This is the future of nutrition tracking.',
+      author: 'Emma K.',
+      role: 'Health Writer'
+    }
+  ]
+
+  return (
+    <div className="container">
+      {/* 1. Navigation */}
+      <nav className="navbar">
+        <div className="nav-container">
+          <div className="nav-logo">🍎 Zoe</div>
+          <ul className="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#download" className="nav-cta">Download</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* 2. Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <h1>Understand Your Food</h1>
+          <p className="subheadline">AI-powered ingredient scanning reveals what your body truly needs. Make smarter choices, feel better.</p>
+          <div className="hero-ctas">
+            <button className="btn btn-primary" onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}>
+              Download Now
+            </button>
+            <button className="btn btn-secondary">Learn More</button>
+          </div>
+        </div>
+        <div className="hero-visual">
+          📱
+        </div>
+      </section>
+
+      {/* 3. Features Section */}
+      <section id="features" className="features">
+        <h2>Why Choose Zoe?</h2>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">🔍</div>
+            <h3>Smart Tracking</h3>
+            <p>Snap a photo. Get instant insights. No manual logging, no guessing. AI does the heavy lifting.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">📊</div>
+            <h3>Deep Insights</h3>
+            <p>Beyond calories. Understand carbs, protein, fiber, NOVA score, and 12+ nutritional metrics per meal.</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>End-to-end encrypted. Your food data is yours alone. We never sell or share your personal information.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. How It Works Section */}
+      <section id="how-it-works" className="how-it-works">
+        <h2>How It Works</h2>
+        <div className="timeline">
+          <div className="timeline-item">
+            <div className="timeline-marker">1</div>
+            <h3>Snap Photo</h3>
+            <p>Point your phone at your meal. One photo captures everything.</p>
+          </div>
+          <div className="timeline-connector"></div>
+          <div className="timeline-item">
+            <div className="timeline-marker">2</div>
+            <h3>AI Analysis</h3>
+            <p>Our AI instantly identifies ingredients, portions, and preparation method.</p>
+          </div>
+          <div className="timeline-connector"></div>
+          <div className="timeline-item">
+            <div className="timeline-marker">3</div>
+            <h3>Get Insights</h3>
+            <p>View 12+ nutritional metrics, NOVA score, and personalized recommendations.</p>
+          </div>
+          <div className="timeline-connector"></div>
+          <div className="timeline-item">
+            <div className="timeline-marker">4</div>
+            <h3>Track & Improve</h3>
+            <p>Build better habits. See patterns. Make smarter food choices every day.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Track Metrics Section */}
+      <section className="metrics">
+        <h2>Track What Matters</h2>
+        <p className="metrics-intro">Zoe monitors 12+ nutritional dimensions to give you a complete picture of your diet.</p>
+        <div className="metrics-grid">
+          {metrics.map((metric, idx) => (
+            <div key={idx} className="metric-badge">
+              {metric}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 6. Testimonials Section */}
+      <section className="testimonials">
+        <h2>What Users Say</h2>
+        <div className="testimonials-grid">
+          {testimonials.map((testimonial, idx) => (
+            <div key={idx} className="testimonial-card">
+              <p className="testimonial-quote">"{testimonial.quote}"</p>
+              <p className="testimonial-author">{testimonial.author}</p>
+              <p className="testimonial-role">{testimonial.role}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 7. FAQ Section */}
+      <section id="faq" className="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div className="faq-container">
+          {faqItems.map((item, idx) => (
+            <div key={idx} className="faq-item">
+              <button 
+                className="faq-question"
+                onClick={() => toggleFAQ(idx)}
+              >
+                <span>{item.question}</span>
+                <span className={`faq-icon ${openFAQ === idx ? 'open' : ''}`}>
+                  ▼
+                </span>
+              </button>
+              {openFAQ === idx && (
+                <div className="faq-answer">
+                  {item.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 8. CTA Footer Section */}
+      <section id="download" className="cta-footer">
+        <h2>Ready to Understand Your Food?</h2>
+        <p>Download Zoe today and get instant nutritional insights with every meal.</p>
+        <button className="btn btn-primary btn-large">
+          Download Now
+        </button>
+        <div className="cta-links">
+          <a href="#" className="cta-link">iOS</a>
+          <a href="#" className="cta-link">Android</a>
+          <a href="#" className="cta-link">Web</a>
+        </div>
+      </section>
+
+      {/* 9. Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h4>Zoe</h4>
+            <p>AI-powered food intelligence for better nutrition.</p>
+          </div>
+          <div className="footer-section">
+            <h4>Legal</h4>
+            <ul>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div className="footer-section">
+            <h4>Follow Us</h4>
+            <ul>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <p>&copy; 2026 Zoe. All rights reserved. | Made with care for better nutrition.</p>
+        </div>
+      </footer>
+    </div>
+  )
+}
