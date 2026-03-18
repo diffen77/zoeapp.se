@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Navigation } from './components/Navigation'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
@@ -70,18 +71,8 @@ export default function Home() {
 
   return (
     <div className="container">
-      {/* 1. Navigation */}
-      <nav className="navbar">
-        <div className="nav-container">
-          <div className="nav-logo">🍎 Zoe</div>
-          <ul className="nav-links">
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#download" className="nav-cta">Download</a></li>
-          </ul>
-        </div>
-      </nav>
+      {/* 1. Navigation Component */}
+      <Navigation />
 
       {/* 2. Hero Section */}
       <section className="hero">
