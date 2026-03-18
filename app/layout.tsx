@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { GoogleAnalytics } from './components/GoogleAnalytics'
 
 export const metadata: Metadata = {
   title: 'Zoe — Understand Your Food | AI Nutrition Tracking',
@@ -70,6 +71,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </head>
       <body>
+        <GoogleAnalytics />
         {children}
       </body>
     </html>

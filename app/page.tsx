@@ -10,6 +10,20 @@ export default function Home() {
     setOpenFAQ(openFAQ === index ? null : index)
   }
 
+  const trackEvent = (eventName: string, eventData?: Record<string, any>) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', eventName, eventData || {})
+    }
+  }
+
+  const handleCtaClick = (ctaName: string) => {
+    trackEvent('cta_click', { cta_name: ctaName })
+  }
+
+  const handleFaqToggle = (question: string) => {
+    trackEvent('faq_toggle', { question: question })
+  }
+
   const faqItems = [
     {
       question: 'How accurate is the food tracking?',
@@ -74,10 +88,18 @@ export default function Home() {
           <h1>Understand Your Food</h1>
           <p className="subheadline">AI-powered ingredient scanning reveals what your body truly needs. Make smarter choices, feel better.</p>
           <div className="hero-ctas">
-            <button className="btn btn-primary" onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}>
+            <button className="btn btn-primary" onClick={() => {
+              handleCtaClick('hero_download');
+              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            }}>
               Download Now
             </button>
-            <button className="btn btn-secondary">Learn More</button>
+            <button className="btn btn-secondary" onClick={() => {
+              handleCtaClick('hero_learn_more');
+              document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+              Learn More
+            </button>
           </div>
         </div>
         <div className="hero-visual">
@@ -172,7 +194,10 @@ export default function Home() {
             <div key={idx} className="faq-item">
               <button 
                 className="faq-question"
-                onClick={() => toggleFAQ(idx)}
+                onClick={() => {
+                  toggleFAQ(idx);
+                  handleFaqToggle(item.question);
+                }}
               >
                 <span>{item.question}</span>
                 <span className={`faq-icon ${openFAQ === idx ? 'open' : ''}`}>
@@ -193,13 +218,13 @@ export default function Home() {
       <section id="download" className="cta-footer">
         <h2>Ready to Understand Your Food?</h2>
         <p>Download Zoe today and get instant nutritional insights with every meal.</p>
-        <button className="btn btn-primary btn-large">
+        <button className="btn btn-primary btn-large" onClick={() => handleCtaClick('footer_download')}>
           Download Now
         </button>
         <div className="cta-links">
-          <a href="#" className="cta-link">iOS</a>
-          <a href="#" className="cta-link">Android</a>
-          <a href="#" className="cta-link">Web</a>
+          <a href="#" className="cta-link" onClick={() => handleCtaClick('download_ios')}>iOS</a>
+          <a href="#" className="cta-link" onClick={() => handleCtaClick('download_android')}>Android</a>
+          <a href="#" className="cta-link" onClick={() => handleCtaClick('download_web')}>Web</a>
         </div>
       </section>
 
