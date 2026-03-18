@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
 export default function Home() {
@@ -218,13 +219,23 @@ export default function Home() {
       <section id="download" className="cta-footer">
         <h2>Ready to Understand Your Food?</h2>
         <p>Download Zoe today and get instant nutritional insights with every meal.</p>
-        <button className="btn btn-primary btn-large" onClick={() => handleCtaClick('footer_download')}>
-          Download Now
-        </button>
-        <div className="cta-links">
-          <a href="#" className="cta-link" onClick={() => handleCtaClick('download_ios')}>iOS</a>
-          <a href="#" className="cta-link" onClick={() => handleCtaClick('download_android')}>Android</a>
-          <a href="#" className="cta-link" onClick={() => handleCtaClick('download_web')}>Web</a>
+        
+        <div style={{ marginBottom: '2rem' }}>
+          <p style={{ marginBottom: '1.5rem', fontSize: '0.95rem', color: 'var(--mint-veil)' }}>
+            Join our waitlist for early access and exclusive updates.
+          </p>
+          <WaitlistForm />
+        </div>
+
+        <div style={{ marginTop: '2rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.2)' }}>
+          <button className="btn btn-primary btn-large" onClick={() => handleCtaClick('footer_download')}>
+            Download Now
+          </button>
+          <div className="cta-links">
+            <a href="#" className="cta-link" onClick={() => handleCtaClick('download_ios')}>iOS</a>
+            <a href="#" className="cta-link" onClick={() => handleCtaClick('download_android')}>Android</a>
+            <a href="#" className="cta-link" onClick={() => handleCtaClick('download_web')}>Web</a>
+          </div>
         </div>
       </section>
 
