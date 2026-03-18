@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Navigation } from './components/Navigation'
+import { Hero } from './components/Hero'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
@@ -74,30 +75,8 @@ export default function Home() {
       {/* 1. Navigation Component */}
       <Navigation />
 
-      {/* 2. Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Understand Your Food</h1>
-          <p className="subheadline">AI-powered ingredient scanning reveals what your body truly needs. Make smarter choices, feel better.</p>
-          <div className="hero-ctas">
-            <button className="btn btn-primary" onClick={() => {
-              handleCtaClick('hero_download');
-              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-            }}>
-              Download Now
-            </button>
-            <button className="btn btn-secondary" onClick={() => {
-              handleCtaClick('hero_learn_more');
-              document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' });
-            }}>
-              Learn More
-            </button>
-          </div>
-        </div>
-        <div className="hero-visual">
-          📱
-        </div>
-      </section>
+      {/* 2. Hero Section Component */}
+      <Hero onCTAClick={handleCtaClick} />
 
       {/* 3. Features Section */}
       <section id="features" className="features">
