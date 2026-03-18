@@ -202,7 +202,7 @@ export default function Home() {
             Download Now
           </button>
           <div className="cta-links">
-            <a href="https://apps.apple.com/app/zoe-nutrition/id6479821234" className="cta-link" onClick={() => handleCtaClick('download_ios')} target="_blank" rel="noopener noreferrer">iOS</a>
+            <a href="itms-apps://apps.apple.com/app/zoe-nutrition/id6479821234" className="cta-link" onClick={() => handleCtaClick('download_ios')} rel="noopener noreferrer">iOS</a>
             <a href="https://play.google.com/store/apps/details?id=com.zoe.nutrition" className="cta-link" onClick={() => handleCtaClick('download_android')} target="_blank" rel="noopener noreferrer">Android</a>
             <a href="https://zoeapp.se" className="cta-link" onClick={() => handleCtaClick('download_web')}>Web</a>
           </div>
