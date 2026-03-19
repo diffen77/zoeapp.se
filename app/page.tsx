@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Navigation } from './components/Navigation'
 import { Hero } from './components/Hero'
 import { Features } from './components/Features'
+import { HowItWorks } from './components/HowItWorks'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
@@ -82,35 +83,8 @@ export default function Home() {
       {/* 3. Features Section Component */}
       <Features />
 
-      {/* 4. How It Works Section */}
-      <section id="how-it-works" className="how-it-works">
-        <h2>How It Works</h2>
-        <div className="timeline">
-          <div className="timeline-item">
-            <div className="timeline-marker">1</div>
-            <h3>Snap Photo</h3>
-            <p>Point your phone at your meal. One photo captures everything.</p>
-          </div>
-          <div className="timeline-connector"></div>
-          <div className="timeline-item">
-            <div className="timeline-marker">2</div>
-            <h3>AI Analysis</h3>
-            <p>Our AI instantly identifies ingredients, portions, and preparation method.</p>
-          </div>
-          <div className="timeline-connector"></div>
-          <div className="timeline-item">
-            <div className="timeline-marker">3</div>
-            <h3>Get Insights</h3>
-            <p>View 12+ nutritional metrics, NOVA score, and personalized recommendations.</p>
-          </div>
-          <div className="timeline-connector"></div>
-          <div className="timeline-item">
-            <div className="timeline-marker">4</div>
-            <h3>Track & Improve</h3>
-            <p>Build better habits. See patterns. Make smarter food choices every day.</p>
-          </div>
-        </div>
-      </section>
+      {/* 4. How It Works Section Component */}
+      <HowItWorks />
 
       {/* 5. Track Metrics Section */}
       <section className="metrics">

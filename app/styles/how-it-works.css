@@ -1,0 +1,476 @@
+/* How It Works Section Styles */
+
+.how-it-works {
+  padding: 6rem 2rem;
+  background: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.how-it-works::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(216, 180, 154, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.how-it-works::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(184, 204, 191, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.how-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.how-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.how-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1B5E20;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.how-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Timeline Container */
+.timeline {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  margin: 3rem 0 4rem 0;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* Timeline Item */
+.timeline-item {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Timeline Marker Wrapper */
+.timeline-marker-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Timeline Marker (the numbered circle) */
+.timeline-marker {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #1B5E20 0%, #7A8C6E 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+  border: 3px solid white;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 8px 24px rgba(27, 94, 32, 0.4);
+}
+
+/* Timeline Content */
+.timeline-content {
+  flex: 1;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.timeline-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1B5E20;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+}
+
+.timeline-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Timeline Connector (horizontal line between markers) */
+.timeline-connector {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #1B5E20, #D8B49A, #D8B49A);
+  z-index: 1;
+  transform: translateX(50%);
+  origin: left;
+}
+
+/* Last item has no connector */
+.timeline-item:last-child .timeline-connector {
+  display: none;
+}
+
+/* Responsive: Tablet (horizontal still works) */
+@media (max-width: 1024px) {
+  .timeline {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .timeline-item {
+    flex: 1;
+  }
+
+  .timeline-marker {
+    width: 70px;
+    height: 70px;
+    font-size: 1.75rem;
+  }
+
+  .timeline-content {
+    padding: 0 0.75rem;
+  }
+
+  .timeline-title {
+    font-size: 1.15rem;
+  }
+
+  .timeline-description {
+    font-size: 0.85rem;
+  }
+
+  .how-title {
+    font-size: 2rem;
+  }
+}
+
+/* Responsive: Mobile (vertical layout) */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 4rem 1.5rem;
+  }
+
+  .how-header {
+    margin-bottom: 3rem;
+  }
+
+  .how-title {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .how-subtitle {
+    font-size: 1rem;
+  }
+
+  /* Switch to vertical layout */
+  .timeline {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0 3rem 0;
+  }
+
+  .timeline-item {
+    flex: none;
+    width: 100%;
+    position: relative;
+    padding-left: 120px;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  /* Reposition marker for vertical layout */
+  .timeline-marker-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-bottom: 0;
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .timeline-marker {
+    width: 65px;
+    height: 65px;
+    font-size: 1.5rem;
+  }
+
+  /* Vertical connector line */
+  .timeline-connector {
+    position: absolute;
+    left: 32.5px;
+    top: 80px;
+    width: 3px;
+    height: calc(100% + 2rem);
+    background: linear-gradient(180deg, #1B5E20, #D8B49A, #D8B49A);
+    transform: none;
+  }
+
+  .timeline-item:last-child .timeline-connector {
+    display: none;
+  }
+
+  .timeline-content {
+    padding: 0;
+  }
+
+  .timeline-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 3rem 1rem;
+  }
+
+  .how-header {
+    margin-bottom: 2rem;
+  }
+
+  .how-title {
+    font-size: 1.5rem;
+  }
+
+  .how-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .timeline {
+    gap: 1.5rem;
+    margin: 1.5rem 0 2.5rem 0;
+  }
+
+  .timeline-item {
+    padding-left: 100px;
+  }
+
+  .timeline-marker {
+    width: 60px;
+    height: 60px;
+    font-size: 1.35rem;
+  }
+
+  .timeline-marker-wrapper {
+    left: -10px;
+  }
+
+  .timeline-connector {
+    left: 30px;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* How It Works CTA */
+.how-cta {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.how-cta-text {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+  font-weight: 500;
+}
+
+.how-cta-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #1B5E20;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+  border: 2px solid #1B5E20;
+}
+
+.how-cta-button:hover {
+  background-color: #0d3a13;
+  border-color: #0d3a13;
+  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.4);
+  transform: translateY(-2px);
+}
+
+.how-cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.3);
+}
+
+.how-cta-button:focus {
+  outline: 2px solid #1B5E20;
+  outline-offset: 2px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-marker,
+  .timeline-connector,
+  .how-cta-button {
+    transition: none;
+  }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  .how-it-works {
+    background: #1a1a1a;
+  }
+
+  .how-title {
+    color: #4db8ff;
+  }
+
+  .how-subtitle {
+    color: #b0b0b0;
+  }
+
+  .timeline-title {
+    color: #4db8ff;
+  }
+
+  .timeline-description {
+    color: #d0d0d0;
+  }
+
+  .timeline-marker {
+    background: linear-gradient(135deg, #2d7a3a 0%, #5fb878 100%);
+    box-shadow: 0 4px 12px rgba(47, 184, 120, 0.3);
+  }
+
+  .timeline-item:hover .timeline-marker {
+    box-shadow: 0 8px 24px rgba(47, 184, 120, 0.4);
+  }
+
+  .timeline-connector {
+    background: linear-gradient(90deg, #2d7a3a, #8b6a47, #8b6a47);
+  }
+
+  .how-cta {
+    border-top-color: #333;
+  }
+
+  .how-cta-text {
+    color: #d0d0d0;
+  }
+
+  .how-cta-button {
+    background-color: #2d7a3a;
+    border-color: #2d7a3a;
+    box-shadow: 0 4px 12px rgba(47, 184, 120, 0.3);
+  }
+
+  .how-cta-button:hover {
+    background-color: #1f5628;
+    border-color: #1f5628;
+    box-shadow: 0 6px 16px rgba(47, 184, 120, 0.4);
+  }
+
+  .how-cta-button:focus {
+    outline-color: #4db8ff;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+  .timeline-marker {
+    border-width: 4px;
+  }
+
+  .timeline-connector {
+    height: 4px;
+  }
+
+  .timeline-item:not(:last-child) .timeline-connector {
+    height: 5px;
+  }
+
+  .how-cta-button {
+    border-width: 3px;
+    font-weight: 900;
+  }
+
+  .how-title {
+    font-weight: 900;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .how-it-works {
+    background: white;
+  }
+
+  .how-it-works::before,
+  .how-it-works::after {
+    display: none;
+  }
+
+  .timeline-item {
+    page-break-inside: avoid;
+  }
+
+  .how-cta-button {
+    border: 2px solid #1B5E20;
+    color: #1B5E20;
+    background: none;
+  }
+}
