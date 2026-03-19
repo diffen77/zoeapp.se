@@ -29,7 +29,11 @@
   color: #333;
   background: none;
   border: none;
-  padding: 0.5rem;
+  padding: 0.75rem 1rem;
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
   cursor: pointer;
   transition: color 0.2s ease;
   flex-shrink: 0;
@@ -62,6 +66,11 @@
   text-decoration: none;
   font-weight: 500;
   padding: 0.75rem 1rem;
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 4px;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
@@ -80,6 +89,11 @@
   color: white;
   background-color: #2f9e44;
   padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-left: 0.5rem;
 }
 
@@ -102,8 +116,12 @@
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  min-height: 48px;
+  min-width: 48px;
   border-radius: 4px;
   flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
 }
 
 .hamburger:focus {
@@ -158,6 +176,9 @@
 .mobile-menu-item {
   display: block;
   padding: 1rem 1.5rem;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
   color: #666;
   text-decoration: none;
   font-weight: 500;
@@ -183,6 +204,10 @@
   border-radius: 4px;
   border-left: none;
   padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -222,19 +247,25 @@
 
   .nav-logo {
     font-size: 1.1rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
+    min-height: 48px;
+    min-width: 48px;
   }
 
   .hamburger {
-    padding: 0.25rem;
+    padding: 0.5rem;
+    min-height: 48px;
+    min-width: 48px;
   }
 
   .mobile-menu-item {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.5rem;
+    min-height: 48px;
   }
 
   .mobile-cta {
     margin: 0.5rem 0.5rem;
+    min-height: 48px;
   }
 }
 
