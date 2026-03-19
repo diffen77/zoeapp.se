@@ -6,6 +6,7 @@ import { Hero } from './components/Hero'
 import { Features } from './components/Features'
 import { HowItWorks } from './components/HowItWorks'
 import { Metrics } from './components/Metrics'
+import { Testimonials } from './components/Testimonials'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
@@ -49,24 +50,6 @@ export default function Home() {
     }
   ]
 
-  const testimonials = [
-    {
-      quote: 'Zoe completely changed how I think about food. I finally understand what my body actually needs.',
-      author: 'Sarah M.',
-      role: 'Nutrition Coach'
-    },
-    {
-      quote: 'The AI is scary-accurate. It knows my food better than I do. Highly recommended!',
-      author: 'Marcus T.',
-      role: 'Fitness Enthusiast'
-    },
-    {
-      quote: 'Simple, beautiful, and genuinely helpful. This is the future of nutrition tracking.',
-      author: 'Emma K.',
-      role: 'Health Writer'
-    }
-  ]
-
   return (
     <div className="container">
       {/* 1. Navigation Component */}
@@ -84,19 +67,8 @@ export default function Home() {
       {/* 5. Track Metrics Section Component */}
       <Metrics />
 
-      {/* 6. Testimonials Section */}
-      <section className="testimonials">
-        <h2>What Users Say</h2>
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, idx) => (
-            <div key={idx} className="testimonial-card">
-              <p className="testimonial-quote">"{testimonial.quote}"</p>
-              <p className="testimonial-author">{testimonial.author}</p>
-              <p className="testimonial-role">{testimonial.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 6. Testimonials Section Component */}
+      <Testimonials />
 
       {/* 7. FAQ Section */}
       <section id="faq" className="faq">
