@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Navigation } from './components/Navigation'
 import { Hero } from './components/Hero'
+import { Features } from './components/Features'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
@@ -78,27 +79,8 @@ export default function Home() {
       {/* 2. Hero Section Component */}
       <Hero onCTAClick={handleCtaClick} />
 
-      {/* 3. Features Section */}
-      <section id="features" className="features">
-        <h2>Why Choose Zoe?</h2>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🔍</div>
-            <h3>Smart Tracking</h3>
-            <p>Snap a photo. Get instant insights. No manual logging, no guessing. AI does the heavy lifting.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">📊</div>
-            <h3>Deep Insights</h3>
-            <p>Beyond calories. Understand carbs, protein, fiber, NOVA score, and 12+ nutritional metrics per meal.</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🔒</div>
-            <h3>Privacy First</h3>
-            <p>End-to-end encrypted. Your food data is yours alone. We never sell or share your personal information.</p>
-          </div>
-        </div>
-      </section>
+      {/* 3. Features Section Component */}
+      <Features />
 
       {/* 4. How It Works Section */}
       <section id="how-it-works" className="how-it-works">
