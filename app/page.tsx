@@ -1,22 +1,16 @@
 'use client'
 
-import { useState } from 'react'
 import { Navigation } from './components/Navigation'
 import { Hero } from './components/Hero'
 import { Features } from './components/Features'
 import { HowItWorks } from './components/HowItWorks'
 import { Metrics } from './components/Metrics'
 import { Testimonials } from './components/Testimonials'
+import { FAQ } from './components/FAQ'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
 export default function Home() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
-  }
-
   const trackEvent = (eventName: string, eventData?: Record<string, any>) => {
     if (typeof window !== 'undefined' && (window as any).gtag) {
       (window as any).gtag('event', eventName, eventData || {})
@@ -26,29 +20,6 @@ export default function Home() {
   const handleCtaClick = (ctaName: string) => {
     trackEvent('cta_click', { cta_name: ctaName })
   }
-
-  const handleFaqToggle = (question: string) => {
-    trackEvent('faq_toggle', { question: question })
-  }
-
-  const faqItems = [
-    {
-      question: 'How accurate is the food tracking?',
-      answer: 'Zoe uses advanced AI to analyze food images with 95%+ accuracy. Our system recognizes portion sizes, ingredients, and preparation methods.'
-    },
-    {
-      question: 'Is my data private?',
-      answer: 'Yes. All data is encrypted end-to-end. We never sell your information. Your food scans are only used to improve your personal insights.'
-    },
-    {
-      question: 'How long until I see results?',
-      answer: 'Most users see meaningful insights within 2-3 weeks of consistent tracking. The more data you provide, the more accurate your personalized recommendations become.'
-    },
-    {
-      question: 'Can I use Zoe offline?',
-      answer: 'Yes! Zoe works offline. Your scans are cached locally and synced when you have internet connection again.'
-    }
-  ]
 
   return (
     <div className="container">
@@ -70,33 +41,8 @@ export default function Home() {
       {/* 6. Testimonials Section Component */}
       <Testimonials />
 
-      {/* 7. FAQ Section */}
-      <section id="faq" className="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div className="faq-container">
-          {faqItems.map((item, idx) => (
-            <div key={idx} className="faq-item">
-              <button 
-                className="faq-question"
-                onClick={() => {
-                  toggleFAQ(idx);
-                  handleFaqToggle(item.question);
-                }}
-              >
-                <span>{item.question}</span>
-                <span className={`faq-icon ${openFAQ === idx ? 'open' : ''}`}>
-                  ▼
-                </span>
-              </button>
-              {openFAQ === idx && (
-                <div className="faq-answer">
-                  {item.answer}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 7. FAQ Section Component */}
+      <FAQ />
 
       {/* 8. CTA Footer Section */}
       <section id="download" className="cta-footer">
