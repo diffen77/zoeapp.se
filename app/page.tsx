@@ -5,6 +5,7 @@ import { Navigation } from './components/Navigation'
 import { Hero } from './components/Hero'
 import { Features } from './components/Features'
 import { HowItWorks } from './components/HowItWorks'
+import { Metrics } from './components/Metrics'
 import { WaitlistForm } from './components/WaitlistForm'
 import './page.css'
 
@@ -48,12 +49,6 @@ export default function Home() {
     }
   ]
 
-  const metrics = [
-    'Carbohydrates', 'Protein', 'Fat', 'Fiber',
-    'Sodium', 'Sugar', 'Vitamins', 'Minerals',
-    'Antioxidants', 'Probiotics', 'NOVA Score', 'Satiety'
-  ]
-
   const testimonials = [
     {
       quote: 'Zoe completely changed how I think about food. I finally understand what my body actually needs.',
@@ -86,18 +81,8 @@ export default function Home() {
       {/* 4. How It Works Section Component */}
       <HowItWorks />
 
-      {/* 5. Track Metrics Section */}
-      <section className="metrics">
-        <h2>Track What Matters</h2>
-        <p className="metrics-intro">Zoe monitors 12+ nutritional dimensions to give you a complete picture of your diet.</p>
-        <div className="metrics-grid">
-          {metrics.map((metric, idx) => (
-            <div key={idx} className="metric-badge">
-              {metric}
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 5. Track Metrics Section Component */}
+      <Metrics />
 
       {/* 6. Testimonials Section */}
       <section className="testimonials">
