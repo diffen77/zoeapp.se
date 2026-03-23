@@ -17,12 +17,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/diffen77/zoeapp.se/issues"
   },
   "homepage": "https://github.com/diffen77/zoeapp.se#readme",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.2.2",
     "autoprefixer": "^10.4.27",
     "next": "^16.2.1",
     "postcss": "^8.5.8",
