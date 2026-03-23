@@ -1,0 +1,33 @@
+{
+  "name": "zoeapp.se",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -p 3900",
+    "build": "next build",
+    "start": "next start -p 3900",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diffen77/zoeapp.se.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/diffen77/zoeapp.se/issues"
+  },
+  "homepage": "https://github.com/diffen77/zoeapp.se#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.27",
+    "next": "^16.2.1",
+    "postcss": "^8.5.8",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.2"
+  }
+}
