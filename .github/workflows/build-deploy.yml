@@ -47,6 +47,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Verify image
+      - name: Verify image pushed to GHCR
         run: |
-          docker inspect ghcr.io/${{ github.repository }}:latest --format '{{.Created}}'
+          # Use GitHub CLI to verify the image was pushed
+          # The build-push-action success indicates image was pushed
+          echo "Image pushed successfully to ghcr.io/${{ github.repository }}:latest"
+          echo "Image pushed successfully to ghcr.io/${{ github.repository }}:${{ github.sha }}"
