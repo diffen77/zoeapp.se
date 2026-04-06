@@ -105,13 +105,13 @@ export default function AdminPage() {
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
         <form onSubmit={handleLogin} className="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm">
           <h1 className="text-2xl font-bold text-gray-900 mb-6">Zoe Admin</h1>
-          <label className="block text-sm font-medium text-gray-700 mb-2">API-nyckel</label>
+          <label className="block text-sm font-medium text-gray-700 mb-2">Lösenord</label>
           <input
             type="password"
             value={apiKey}
             onChange={(e) => setApiKey(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:ring-2 focus:ring-green-500 focus:border-transparent"
-            placeholder="Ange admin API-nyckel"
+            placeholder="Ange lösenord"
             required
           />
           <button
