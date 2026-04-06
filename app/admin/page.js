@@ -226,13 +226,13 @@ function PendingProducts({ apiKey }) {
                 {detail.front_image && (
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Framsida</p>
-                    <img src={detail.front_image} alt="Framsida" className="rounded-lg w-full object-cover" />
+                    <img src={detail.front_image.startsWith('data:') ? detail.front_image : `data:image/jpeg;base64,${detail.front_image}`} alt="Framsida" className="rounded-lg w-full object-cover" />
                   </div>
                 )}
                 {detail.back_image && (
                   <div>
                     <p className="text-xs text-gray-500 mb-1">Ingredienser</p>
-                    <img src={detail.back_image} alt="Ingredienser" className="rounded-lg w-full object-cover" />
+                    <img src={detail.back_image.startsWith('data:') ? detail.back_image : `data:image/jpeg;base64,${detail.back_image}`} alt="Ingredienser" className="rounded-lg w-full object-cover" />
                   </div>
                 )}
               </div>
